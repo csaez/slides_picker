@@ -36,11 +36,7 @@
         <![endif]-->
 
         <style>
-        pre code {
-            display: block; padding: 0.5em;
-            background: rgba(0,0,0,0.5);
-            color: #DCDCDC;
-        }
+        pre code {background: rgba(0,0,0,0.5);}
         </style>
     </head>
 
@@ -70,7 +66,6 @@
                                     <li>QGraphicsScene (canvas)</li>
                                 </ul>
                             </li>
-                            <li>...</li>
                         </ul>
                     </section>
                 </section>
@@ -89,11 +84,16 @@
 
                     <section>
                         <h2>Animum rig: Mario</h2>
+                        <img src="images/mario.jpg" alt="Mario rig" height="600px">
+                    </section>
+
+                    <section>
+                        <h2>Animum rig: Mario</h2>
                         <ul>
-                            <li>600+ DAG nodes</li>
-                            <li>120 controles corporales</li>
-                            <li>30 controles faciales</li>
-                            <li>20 atributos personalizados</li>
+                            <li>1950+ nodos</li>
+                            <li>100+ controles anim. cuerpo</li>
+                            <li>45+ controles anim. faciales</li>
+                            <li>790+ atributos animables</li>
                             <li>...</li>
                         </ul>
                     </section>
@@ -244,7 +244,7 @@ cmds.showWindow(w)
                     </section>
 
                     <section>
-                        <h3>Python (*Qt binding) -> <a href="http://qt-project.org/">Qt</a> <- Maya</h3>
+                        <h3>Python (*PySide) -> <a href="http://qt-project.org/">Qt</a> <- Maya</h3>
                         <br>
                         <p style="text-align: right;"><small>*Asumiremos PySide como Qt binding de aquí en más...</small></p>
                     </section>
@@ -255,7 +255,7 @@ cmds.showWindow(w)
                     </section>
 
                     <section>
-                        <h2>.ui -> python</h2>
+                        <h2>.ui -> PySide</h2>
                         <pre><code class="python">
 # file: pyside-uic.py
 
@@ -294,15 +294,29 @@ from maya.OpenMayaUI import MQtUtil  # utilidades Qt maya
 def get_anchor():
     ptr = MQtUtil.mainWindow()  # puntero a la ventana de maya (c++)
     return wrapInstance(long(ptr), QMainWindow)  # instancia QMainWindow desde ptr
-                        </code></pre><br>
-                        <pre class="fragment roll-in"><code class="python">
-from qt_utils import get_anchor  # nuestra funcion
-from PySide import QtGui  # widgets Qt
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Python -> PySide</h2><br>
+                        <pre><code class="python">
+from qt_utils import get_anchor  # maya mainwindow
+from picker import Dialog_Ui  # ui convertido
 
+class Picker(DialogUi):  # heredamos del ui convertido
+    def __init__(self, parent, data):
+        super(Picker, self).__init__(parent)
+        self.data = data
+        self.connect_buttons()  # conectamos botones
 
-w = QtGui.QMainWindow(parent=get_anchor())  # QMainWindow dentro de maya, nótese el parent
-w.addWidget(QtGui.QLabel("Hola mundo!"))  # añadimos una etiqueta
-w.show()  # enseñamos la ventana
+    def connect_buttons(self):
+        for w in self.children():
+            if not w.objectName().startswith("ui_"):
+                continue
+            target_names = self.data.get(w.objectName())
+            w.connect.clicked(lambda t=target_names: cmds.select(t))
+
+app = Picker(parent=get_anchor())
+app.show()
                         </code></pre>
                     </section>
 
@@ -331,7 +345,7 @@ w.show()  # enseñamos la ventana
                     </section>
 
                     <section>
-
+                        <h1>...</h1>
                     </section>
                 </section>
 
