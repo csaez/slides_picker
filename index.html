@@ -78,8 +78,6 @@
                             <strong>Interfaz gráfica</strong> mediante la cual 'no-riggers' interactúan con los rigs en producción,
                             es su <i>centro de operaciones.</i>
                         </p>
-                        <br><br>
-                        <h3>Viewport + Anim. Editor + Picker == :-)</h3>
                     </section>
 
                     <section>
@@ -88,7 +86,7 @@
                     </section>
 
                     <section>
-                        <h2>Animum rig: Mario</h2>
+                        <h2>Los números de Mario:</h2>
                         <ul>
                             <li>1950+ nodos</li>
                             <li>100+ controles anim. cuerpo</li>
@@ -99,7 +97,17 @@
                     </section>
 
                     <section>
-                        <h1>Ejemplos...</h1>
+                        <h2>+control &#8594; +gestión</h2>
+                        <p>Según la complejidad del rig, llega un punto en que resulta poco eficiente seleccionar los controles de animación desde el visor 3D.</p>
+                    </section>
+
+                    <section>
+                        <h3>Camera View + Graph Editor + Picker</h3>
+                        <h1>&#9996;</h1>
+                    </section>
+
+                    <section>
+                        <h1>Referencias...</h1>
                     </section>
 
                     <section>
@@ -131,7 +139,7 @@
 
                 <section data-background="#4d7e65">
                     <section>
-                        <h2>Interfaz gráfica -> Scripting</h2>
+                        <h2>Interfaz gráfica &#8594; Scripting</h2>
                         Maya Embedded Language (MEL) o Python?
                     </section>
 
@@ -161,7 +169,7 @@
                     </section>
 
                     <section>
-                        <h1>Qt Bindings!</h1>
+                        <h1>Qt Bindings</h1>
                         <h3>Qt (c++ UI framework) en python.</h3>
                         <ul>
                             <li><a href="http://www.riverbankcomputing.com/software/pyqt/intro">PyQt</a> - GNU General Public License v3, commercial</li>
@@ -184,7 +192,7 @@
                     </section>
 
                     <section>
-                        <h2>Python (cmds) -> Maya -> <a href="http://qt-project.org/">Qt</a></h2>
+                        <h2>Python (cmds) &#8594; Maya &#8594; <a href="http://qt-project.org/">Qt</a></h2>
                     </section>
 
                     <section>
@@ -244,7 +252,7 @@ cmds.showWindow(w)
                     </section>
 
                     <section>
-                        <h3>Python (*PySide) -> <a href="http://qt-project.org/">Qt</a> <- Maya</h3>
+                        <h2>Python (*PySide) &#8594; <a href="http://qt-project.org/">Qt</a> &#8592; Maya</h2>
                         <br>
                         <p style="text-align: right;"><small>*Asumiremos PySide como Qt binding de aquí en más...</small></p>
                     </section>
@@ -255,7 +263,7 @@ cmds.showWindow(w)
                     </section>
 
                     <section>
-                        <h2>.ui -> PySide</h2>
+                        <h2>ui &#8594; PySide</h2>
                         <pre><code class="python">
 # file: pyside-uic.py
 
@@ -282,7 +290,7 @@ if __name__ == "__main__" and len(sys.argv) == 2:
                     </section>
 
                     <section>
-                        <h2>Maya -> PySide</h2>
+                        <h2>Maya &#8594; PySide</h2>
                         <br><pre><code class="python">
 # file: qt_utils.py
 
@@ -297,7 +305,7 @@ def get_anchor():
                         </code></pre>
                     </section>
                     <section>
-                        <h2>Python -> PySide</h2><br>
+                        <h2>Python &#8594; PySide</h2><br>
                         <pre><code class="python">
 from qt_utils import get_anchor  # maya mainwindow
 from picker import Dialog_Ui  # ui convertido
