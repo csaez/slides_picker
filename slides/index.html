@@ -1,27 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="utf-8">
-
         <title>Character Picker</title>
-
         <meta name="description" content="Como hacer un sinoptico corporal en Autodesk Maya">
         <meta name="author" content="Cesar Saez">
-
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="css/reveal.min.css">
-        <link rel="stylesheet" href="css/theme/night.css" id="theme">
+        <link rel="stylesheet" href="css/reveal.min.css" type="text/css">
+        <link rel="stylesheet" href="css/theme/night.css" id="theme" type="text/css">
 
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css" type="text/css">
 
         <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-        <script>
+        <script type="text/javascript">
             if( window.location.search.match( /print-pdf/gi ) ) {
                 var link = document.createElement( 'link' );
                 link.rel = 'stylesheet';
@@ -35,15 +30,13 @@
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
 
-        <style>
-        pre code {background: rgba(0,0,0,0.5);}
+        <style type="text/css">
+            pre code {background: rgba(0,0,0,0.5);}
+            .reveal pre code {max-height: 450px;}
         </style>
     </head>
-
     <body>
-
         <div class="reveal">
-
             <div class="slides">
                 <section>
                     <section>
@@ -75,14 +68,15 @@
                     <section>
                         <h1>Sinóptico?</h1>
                         <p>
-                            <strong>Interfaz gráfica</strong> mediante la cual 'no-riggers' interactúan con los rigs en producción,
-                            es su <i>centro de operaciones.</i>
+                            <strong>Interfaz gráfica</strong> mediante la cual 'no-riggers' interactúan con los rigs en producción, es su <i>centro de operaciones.</i>
                         </p>
                     </section>
 
                     <section>
                         <h2>Animum rig: Mario</h2>
-                        <img src="images/mario.jpg" alt="Mario rig" height="600px">
+                        <p>
+                          <img src="images/mario.jpg" alt="Mario rig" height="600px">
+                        </p>
                     </section>
 
                     <section>
@@ -97,13 +91,15 @@
                     </section>
 
                     <section>
-                        <h2>+control &#8594; +gestión</h2>
-                        <p>Según la complejidad del rig, llega un punto en que resulta poco eficiente seleccionar los controles de animación desde el visor 3D.</p>
+                        <h2>+control → +gestión</h2>
+                        <p>
+                            Según la complejidad del rig, llega un punto en que resulta poco eficiente seleccionar los controles de animación desde el visor 3D.
+                        </p>
                     </section>
 
                     <section>
                         <h3>Camera View + Graph Editor + Picker</h3>
-                        <h1>&#9996;</h1>
+                        <h1>✌</h1>
                     </section>
 
                     <section>
@@ -111,27 +107,27 @@
                     </section>
 
                     <section>
-                        <img src="images/picker_simple.jpg" alt="animSelector">
-                        <small>animSelector, <a href="http://www.creativecrash.com/maya/script/animselector-the-fast-picker">Luca Fiorentini</a></small>
+                        <p><img src="images/picker_simple.jpg" alt="animSelector"></p>
+                        <p><small>animSelector, <a href="http://www.creativecrash.com/maya/script/animselector-the-fast-picker">Luca Fiorentini</a></small></p>
                     </section>
 
                     <section>
-                        <img src="images/picker_unreal.jpg" alt="Unreal Engine Picker" height="600px">
+                        <p><img src="images/picker_unreal.jpg" alt="Unreal Engine Picker" height="600px"></p>
                         <p><small>Unreal Engine 4, <a href="https://www.unrealengine.com/blog/animation-rigging-toolkit-in-ue4">Epic Games</a></small></p>
                     </section>
 
                     <section>
-                        <img src="images/picker_pirates.png" alt="The Pirates">
+                        <p><img src="images/picker_pirates.png" alt="The Pirates"></p>
                         <p><small>The Pirates, <a href="https://www.youtube.com/watch?v=eskCem1xaIs">Martin Orlowski</a> - <a href="http://aardman.com">Aardman</a></small></p>
                     </section>
 
                     <section>
-                        <img src="images/picker_frozen-wide.jpg" alt="Frozen">
+                        <p><img src="images/picker_frozen-wide.jpg" alt="Frozen"></p>
                         <p><small>Frozen, <a href="http://www.disneyanimation.com/">Walt Disney Animation Studios</a></small></p>
                     </section>
 
                     <section>
-                        <img src="images/picker_frozen-close.jpg" alt="Frozen">
+                        <p><img src="images/picker_frozen-close.jpg" alt="Frozen"></p>
                         <p><small>Frozen, <a href="http://www.disneyanimation.com/">Walt Disney Animation Studios</a></small></p>
                     </section>
                 </section>
@@ -139,8 +135,8 @@
 
                 <section data-background="#4d7e65">
                     <section>
-                        <h2>Interfaz gráfica &#8594; Scripting</h2>
-                        Maya Embedded Language (MEL) o Python?
+                        <h2>Interfaz gráfica → Scripting</h2>
+                        <p>Maya Embedded Language (MEL) o Python?</p>
                     </section>
 
                     <section>
@@ -173,7 +169,7 @@
                         <h3>Qt (c++ UI framework) en python.</h3>
                         <ul>
                             <li><a href="http://www.riverbankcomputing.com/software/pyqt/intro">PyQt</a> - GNU General Public License v3, commercial</li>
-                            <li><a href="http://qt-project.org/wiki/PySide">PySide</a> - LGPL version 2.1 (incluído en Maya >= 2014)</li>
+                            <li><a href="http://qt-project.org/wiki/PySide">PySide</a> - LGPL version 2.1 (incluído en Maya &gt;= 2014)</li>
                         </ul>
                         <br><br><br>
                         <p style="text-align: right"><small>Volveré sobre esto más adelante...</small></p>
@@ -192,16 +188,16 @@
                     </section>
 
                     <section>
-                        <h2>Python (cmds) &#8594; Maya &#8594; <a href="http://qt-project.org/">Qt</a></h2>
+                        <h2>Python (cmds) → Maya → <a href="http://qt-project.org/">Qt</a></h2>
                     </section>
 
                     <section>
-                        <img src="images/mario_cmds.png" alt="" height="600">
+                        <p><img src="images/mario_cmds.png" alt="Mario GUI (cmds)"></p>
                     </section>
 
                     <section>
                         <h1>picker_v1.py</h1>
-                        <pre><code class="python">
+                        <p><pre><code class="python">
 from maya import cmds  # importamos los comandos de maya
 
 
@@ -215,17 +211,16 @@ cmds.button(label="Head", height=30, backgroundColor=(0.9, 0.7, 0.1),
 ...
 
 cmds.showWindow(w)  # abrimos la ventana
-                        </code></pre>
+                        </code></pre></p>
                     </section>
 
                     <section>
-                        <h2>Información != lógica</h2>
-                        <p>El script actual funciona, pero eso no siempre es suficiente.</p>
+                        <h1>Datos ↔ Lógica</h1>
                     </section>
 
                     <section>
-                        <h2>Documenta el formato! (SPECS)</h2>
-                        <pre><code class="markdown">
+                        <h2>Estructura de datos</h2>
+                        <p><pre><code class="markdown">
 ### Version 0.1:
 
     {
@@ -234,7 +229,10 @@ cmds.showWindow(w)  # abrimos la ventana
         "charname": "",
         "color_table": {key: value, ...},
         "anim_table": {key: value, ...},
-        "selectors": ({"name": "", "targets": (anim_table key, ...), "color": color_table key}, ...),
+        "selectors": ({"name": "",
+                       "targets": (anim_table key, ...),
+                       "color": color_table key,
+                      }, ...),
     }
 
 * filetype: `str` que determina el tipo de información
@@ -243,7 +241,7 @@ cmds.showWindow(w)  # abrimos la ventana
 * color_table: `dict` con tabla de colores
     * key: `str` alias del color
     * value: `tuple` componentes RGB normalizados (de 0.0 a 1.0)
-* anim_table: `dict` aliases de control
+* anim_table: `dict` aliases controles de anim.
     * key: `str` alias
     * value: `str` con el nombre del nodo correspondiente
 * selectors: `list` / `tuple` de selectores
@@ -251,12 +249,12 @@ cmds.showWindow(w)  # abrimos la ventana
         * name: `str` que representa el nombre del botón
         * targets: `list`/`tuple` de aliases a seleccionar (anim_table)
         * color: `str` con el 'alias' correspondiente en color_table
-                        </code></pre>
+                        </code></pre></p>
                     </section>
 
                     <section>
-                        <h1>json</h1>
-                        <pre><code class="python">
+                        <h1>Datos (json)</h1>
+                        <p><pre><code class="python">
 import json
 
 
@@ -269,57 +267,43 @@ with open(file_path) as fp:
 # Exportar a json
 with open(file_path, "w") as fp:  # abrimos en modo escritura!
     json.dump(fp, data)
-                        </code></pre>
+                        </code></pre></p>
                     </section>
 
                     <section>
                         <h1>picker_v2.py</h1>
-                        <pre><code class="python">
-import json  # importamos json
-from maya import cmds  # importamos los comandos de maya
-
-
-def from_json(json_file):
-    with open(json_file) as fp:  # abrimos json_file en modo lectura
-        data = json.load(fp)  # convertimos de json a python
-    return data
-
+                        <p><pre><code class="python">
+import json
+from maya import cmds
 
 def open_picker(data, w=300, h=30):
-    validate = (data.get("filetype") == "picker_data",
-                data.get("version") >= 0.1)
-    if not all(validate):  # validamos data
-        return
+    if not all((data.get("filetype") == "picker_data",
+                data.get("version") &gt;= 0.1)):
+        return False  # datos inválidos, abortar
     w = cmds.window(title="Picker", width=w)  # nueva ventana
     cmds.columnLayout(adjustableColumn=True)  # layout vertical
-    # nombre del personaje
-    cmds.text(label="char: " + data["charname"], height=h)
-    # botones
-    for btn in data.get("selectors"):
-        # obtenemos targets
-        targets = [data["anim_table"].get(x) for x in btn["targets"]]
-        # creamos el boton
-        cmds.button(height=h, label=btn["name"],
+    cmds.text(label="char: " + data["charname"], height=h)  # nombre del personaje
+    for btn in data.get("selectors"):  # botones
+        targets = [data["anim_table"].get(x) for x in btn["targets"]]  # targets
+        cmds.button(label=btn["name"], height=h,
                     backgroundColor=data["color_table"].get(btn["color"]),
-                    command=lambda _, t=targets: cmds.select(t))
+                    command=lambda _, t=targets: cmds.select(t))  # creamos boton
     cmds.showWindow(w)  # abrimos la ventana
 
-d = from_json(r"W:\dev\slides_picker\code\picker_cmds\data.json")
+json_file = r"W:\dev\slides_picker\code\picker_cmds\data.json"
+with open(json_file) as fp:
+    d = json.load(fp)  # importamos datos
 open_picker(d)
-                        </code></pre>
-                    </section>
-
-                    <section>
-                        <h1>DEMO...</h1>
+                        </code></pre></p>
                     </section>
 
                     <section>
                         <h2>Limitaciones:</h2>
                         <ul>
-                            <li>No es posible usar imágenes/iconos</li>
-                            <li>Control limitado mediante layouts</li>
-                            <li>Diseño de la GUI mediante código</li>
-                            <li>Botones rectangulares</li>
+                            <li>Diseño de la GUI mediante código.</li>
+                            <li>Opciones de posicionamiento limitadas.</li>
+                            <li>No es posible usar imágenes/iconos.</li>
+                            <li>Botones rectangulares.</li>
                         </ul>
                     </section>
 
@@ -336,8 +320,8 @@ open_picker(d)
                     </section>
 
                     <section>
-                        <h2>Python (*PySide) &#8594; <a href="http://qt-project.org/">Qt</a> &#8592; Maya</h2>
-                        <br>
+                        <h2>Python (*PySide) → <a href="http://qt-project.org/">Qt</a> ← Maya</h2>
+                        <br><br>
                         <p style="text-align: right;"><small>*Asumiremos PySide como Qt binding de aquí en más...</small></p>
                     </section>
 
@@ -347,12 +331,12 @@ open_picker(d)
                     </section>
 
                     <section>
-                        <h1>DEMO...</h1>
+                        <p><img src="images/mario_designer.png" alt="Mario Designer"></p>
                     </section>
 
                     <section>
-                        <h2>ui &#8594; PySide</h2>
-                        <pre><code class="python">
+                        <h2>1. xxx.ui → xxx.py</h2>
+                        <p><pre><code class="python">
 # file: pyside-uic.py
 
 import sys
@@ -366,20 +350,15 @@ def convert(ui_file):
 
 if __name__ == "__main__" and len(sys.argv) == 2:
     convert(sys.argv[1])
-                        </code></pre><br>
-                        <pre><code class="bash">
-#!/bin/bash
-# file: pyside-uic.sh
-
-.../autodesk/mayaXXXX/bin/mayapy .../pyside-uic.py $1
-                        </code></pre>
-
-                    <p style="text-align: right"><small><a href="http://download.autodesk.com/global/docs/maya2014/en_us/files/GUID-FAD0F6CC-15D0-4489-9372-028146B70F49.htm">*Maya documentation</a></small></p>
+                        </code></pre></p>
+                        <p style="text-align: right">
+                            <small><a href="http://download.autodesk.com/global/docs/maya2014/en_us/files/GUID-FAD0F6CC-15D0-4489-9372-028146B70F49.htm">*Documentación</a></small>
+                        </p>
                     </section>
 
                     <section>
-                        <h2>Maya &#8594; PySide</h2>
-                        <br><pre><code class="python">
+                        <h2>2. Maya MainWindow</h2>
+                        <p><pre><code class="python">
 # file: qt_utils.py
 
 from PySide.QtGui import QMainWindow # qt widget
@@ -390,11 +369,12 @@ from maya.OpenMayaUI import MQtUtil  # utilidades Qt maya
 def get_anchor():
     ptr = MQtUtil.mainWindow()  # puntero a la ventana de maya (c++)
     return wrapInstance(long(ptr), QMainWindow)  # instancia QMainWindow desde ptr
-                        </code></pre>
+                        </code></pre></p>
                     </section>
+
                     <section>
-                        <h2>Python &#8594; PySide</h2><br>
-                        <pre><code class="python">
+                        <h1>1 + 2 ↴</h1>
+                        <p><pre><code class="python">
 from qt_utils import get_anchor  # maya mainwindow
 from picker import Dialog_Ui  # ui convertido
 
@@ -413,18 +393,16 @@ class Picker(DialogUi):  # heredamos del ui convertido
 
 app = Picker(parent=get_anchor())
 app.show()
-                        </code></pre>
+                        </code></pre></p>
                     </section>
 
                     <section>
                         <h2>Limitaciones:</h2>
                         <ul>
-                            <span class="fragment fade-out">
-                                <li>GUI estática, válida para 1 rig (Mario)</li>
-                                <li>No es posible usar imágenes/iconos</li>
-                                <li>Control limitado mediante layouts</li>
-                                <li>Diseño de la GUI mediante código</li>
-                            </span>
+                            <li><span class="fragment fade-out">GUI estática, válida para 1 rig (Mario)</span></li>
+                            <li><span class="fragment fade-out">No es posible usar imágenes/iconos</span></li>
+                            <li><span class="fragment fade-out">Control limitado mediante layouts</span></li>
+                            <li><span class="fragment fade-out">Diseño de la GUI mediante código</span></li>
                             <li>Sólo botones rectangulares</li>
                         </ul>
                     </section>
@@ -450,15 +428,12 @@ app.show()
                     <h1>GRACIAS</h1>
                     <h4>Cesar Saez | <a href="http://cesarsaez.me">http://cesarsaez.me</a></h4>
                 </section>
-
             </div>
-
         </div>
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.min.js"></script>
-
-        <script>
+        <script src="lib/js/head.min.js" type="text/javascript"></script>
+        <script src="js/reveal.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
 
             // Full list of configuration options available here:
             // https://github.com/hakimel/reveal.js#configuration
@@ -487,6 +462,5 @@ app.show()
             });
 
         </script>
-
     </body>
 </html>
