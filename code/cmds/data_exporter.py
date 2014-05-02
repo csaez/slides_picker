@@ -1,15 +1,14 @@
 import json
 
-
-d = {"filetype": "picker_data", "version": 0.1,
-     "charname": "mario_rig",
-     "color_table": {"darkred": (0.6, 0.06, 0.01),
-                     "yellow": (0.9, 0.7, 0.1),
-                     "pink": (0.98, 0.58, 0.43),
-                     "blue": (0.1, 0.4, 0.6),
-                     "red": (0.8, 0.15, 0.15),
-                     "black": (0, 0, 0)},
-     "anim_table": {"kneeIK": "mario_rig:mario_ac_lf_kneeIK",
+data = {"filetype": "picker_data", "version": 0.1,
+        "charname": "mario_rig",
+        "color_table": {"darkred": (0.6, 0.06, 0.01),
+                        "yellow": (0.9, 0.7, 0.1),
+                        "pink": (0.98, 0.58, 0.43),
+                        "blue": (0.1, 0.4, 0.6),
+                        "red": (0.8, 0.15, 0.15),
+                        "black": (0, 0, 0)},
+        "anim_table": {"kneeIK": "mario_rig:mario_ac_lf_kneeIK",
                     "lf_lowleg_bend": "mario_rig:mario_ac_lf_lowleg_bend",
                     "lf_upleg_bend": "mario_rig:mario_ac_lf_upleg_bend",
                     "rt_kneeIK": "mario_rig:mario_ac_rt_kneeIK",
@@ -112,34 +111,53 @@ d = {"filetype": "picker_data", "version": 0.1,
                     "rt_legPole": "mario_rig:mario_ac_rt_legPole",
                     "cn_lookAt": "mario_rig:mario_ac_cn_lookAt",
                     "cn_jaw": "mario_rig:mario_ac_cn_jaw"},
-     "selectors": ({"name": "Eyes", "color": "yellow", "targets": ("cn_lookAt", )},
-    {"name": "Head", "color": "yellow", "targets": ("cn_head", )},
-         {"name": "Neck", "color": "yellow", "targets": ("cn_neck", )},
-         {"name": "Chest", "color": "yellow", "targets": ("cn_chest", )},
-         {"name": "SpineFK2", "color": "darkred", "targets": ("cn_spineFK2", )},
-         {"name": "SpineFK1", "color": "darkred", "targets": ("cn_spineFK1", )},
-         {"name": "Pelvis", "color": "yellow", "targets": ("cn_pelvis", )},
-         {"name": "Upper Body", "color": "pink", "targets": ("cn_upperbody", )},
-         {"name": "Clavicle Left", "color": "blue", "targets": ("lf_clavicle", )},
-         {"name": "ShouldrFK Left", "color": "blue", "targets": ("lf_shoulderFK", )},
-         {"name": "ElbowFK Left", "color": "blue", "targets": ("lf_elbowFK", )},
-         {"name": "HandFK Left", "color": "blue", "targets": ("lf_handFK", )},
-         {"name": "LegPole Left", "color": "blue", "targets": ("lf_legPole", )},
-         {"name": "FootIK Left", "color": "blue", "targets": ("lf_footIK", )},
-         {"name": "Clavicle Right", "color": "red", "targets": ("rt_clavicle", )},
-         {"name": "ShouldrFK Right", "color": "red", "targets": ("rt_shoulderFK", )},
-         {"name": "ElbowFK Right", "color": "red", "targets": ("rt_elbowFK", )},
-         {"name": "HandFK Right", "color": "red", "targets": ("rt_handFK", )},
-         {"name": "LegPole Right", "color": "red", "targets": ("rt_legPole", )},
-         {"name": "FootIK Right", "color": "red", "targets": ("rt_footIK", )},
-         {"name": "Base", "color": "pink", "targets": ("cn_base", )},
-         {"name": "All", "color": "black",
-          "targets": ("lf_kneeIK", "lf_lowleg_bend",
-                                   "lf_upleg_bend", "rt_kneeIK",
-                                   "rt_lowleg_bend", "rt_upleg_bend",
-                                   "cn_midbody_bend", "cn_lowbody_bend",
-                                   "cn_topbody_bend", "cn_upperteeth",
-                                   "lf_eye", "rt_eye", "cn_nosetip",
+        "selectors": ({"name": "Eyes", "color": "yellow",
+                       "targets": ("cn_lookAt", )},
+       {"name": "Head", "color": "yellow", "targets": ("cn_head", )},
+            {"name": "Neck", "color": "yellow",
+             "targets": ("cn_neck", )},
+            {"name": "Chest", "color": "yellow",
+             "targets": ("cn_chest", )},
+            {"name": "SpineFK2", "color": "darkred",
+             "targets": ("cn_spineFK2", )},
+            {"name": "SpineFK1", "color": "darkred",
+             "targets": ("cn_spineFK1", )},
+            {"name": "Pelvis", "color": "yellow",
+             "targets": ("cn_pelvis", )},
+            {"name": "Upper Body", "color": "pink",
+             "targets": ("cn_upperbody", )},
+            {"name": "Clavicle Left", "color":
+             "blue", "targets": ("lf_clavicle", )},
+            {"name": "ShouldrFK Left", "color":
+             "blue", "targets": ("lf_shoulderFK", )},
+            {"name": "ElbowFK Left", "color":
+             "blue", "targets": ("lf_elbowFK", )},
+            {"name": "HandFK Left", "color":
+                "blue", "targets": ("lf_handFK", )},
+            {"name": "LegPole Left", "color":
+             "blue", "targets": ("lf_legPole", )},
+            {"name": "FootIK Left", "color":
+                "blue", "targets": ("lf_footIK", )},
+            {"name": "Clavicle Right", "color":
+             "red", "targets": ("rt_clavicle", )},
+            {"name": "ShouldrFK Right", "color":
+             "red", "targets": ("rt_shoulderFK", )},
+            {"name": "ElbowFK Right", "color":
+             "red", "targets": ("rt_elbowFK", )},
+            {"name": "HandFK Right", "color":
+                "red", "targets": ("rt_handFK", )},
+            {"name": "LegPole Right", "color":
+             "red", "targets": ("rt_legPole", )},
+            {"name": "FootIK Right", "color":
+                "red", "targets": ("rt_footIK", )},
+            {"name": "Base", "color": "pink", "targets": ("cn_base", )},
+            {"name": "All", "color": "black",
+             "targets": ("lf_kneeIK", "lf_lowleg_bend",
+                         "lf_upleg_bend", "rt_kneeIK",
+                         "rt_lowleg_bend", "rt_upleg_bend",
+                         "cn_midbody_bend", "cn_lowbody_bend",
+                         "cn_topbody_bend", "cn_upperteeth",
+                         "lf_eye", "rt_eye", "cn_nosetip",
                                    "cn_bottomhead", "cn_middownhead",
                                    "cn_midnose", "lf_ear", "rt_ear",
                                    "rt_eye", "cn_topnose", "lf_eye",
@@ -175,5 +193,6 @@ d = {"filetype": "picker_data", "version": 0.1,
                                    "rt_footIK", "lf_legPole",
                                    "rt_legPole", "cn_lookAt", "cn_jaw")})}
 
-with open(r"W:\dev\slides_picker\code\picker_cmds\data.json", "w") as fp:
-    json.dump(d, fp, indent=2, separators=[",", ":"])
+json_file = r"W:\dev\slides_picker\code\cmds\data.json"
+with open(json_file, "w") as fp:
+    json.dump(data, fp, indent=2, separators=[",", ":"])

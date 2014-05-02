@@ -18,15 +18,15 @@ def open_picker(data, w=300, h=30):
     # nombre del personaje
     cmds.text(label="char: " + data["charname"], height=h)
     # botones
-    for btn in data.get("selectors"):
+    for btn in data["selectors"]:
         # obtenemos targets
         targets = [data["anim_table"].get(x) for x in btn["targets"]]
         # creamos el boton
-        cmds.button(height=h,
-                    label=btn["name"],
+        cmds.button(label=btn["name"],
+                    height=h,
                     backgroundColor=data["color_table"].get(btn["color"]),
                     command=lambda _, t=targets: cmds.select(t))
     cmds.showWindow(w)  # abrimos la ventana
 
-d = from_json(r"W:\dev\slides_picker\code\picker_cmds\data.json")
+d = from_json(r"W:\dev\slides_picker\code\cmds\data.json")
 open_picker(d)
