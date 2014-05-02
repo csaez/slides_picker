@@ -39,28 +39,26 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <section>
-                        <h1>Character Picker</h1>
-                        <h3>... o cómo hacer un sinóptico corporal en Autodesk Maya.</h3>
-                        <p>
-                            <small>por <a href="http://cesarsaez.me">Cesar Saez</a> | <a href="http://twitter.com/csaezmargotta">@csaezmargotta</a></small>
-                        </p>
-                    </section>
+                    <h1>Character Picker</h1>
+                    <h3>... o cómo hacer un sinóptico corporal en Autodesk Maya.</h3>
+                    <p>
+                        <small>por <a href="http://cesarsaez.me">Cesar Saez</a> | <a href="http://twitter.com/csaezmargotta">@csaezmargotta</a></small>
+                    </p>
+                </section>
 
-                    <section>
-                        <h2>Hoy hablaremos sobre...</h2>
-                        <ul>
-                            <li>Sinópticos</li>
-                            <li>Python</li>
-                            <li>Maya APIs (cmds, pymel, openmaya)</li>
-                            <li>Qt (PyQt4, PySide)
-                                <ul>
-                                    <li>Qt Designer</li>
-                                    <li>QGraphicsScene (canvas)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
+                <section>
+                    <h2>Hoy hablaremos sobre...</h2>
+                    <ul>
+                        <li>Sinópticos</li>
+                        <li>Python</li>
+                        <li>Maya APIs (cmds, pymel, openmaya)</li>
+                        <li>Qt (PyQt4, PySide)
+                            <ul>
+                                <li>Qt Designer</li>
+                                <li>QGraphicsScene (canvas)</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </section>
 
 
@@ -73,7 +71,7 @@
                     </section>
 
                     <section>
-                        <h2>Animum rig: Mario</h2>
+                        <h2>La víctima: Mario</h2>
                         <p>
                           <img src="images/mario.jpg" alt="Mario rig" height="600px">
                         </p>
@@ -82,10 +80,10 @@
                     <section>
                         <h2>Los números de Mario:</h2>
                         <ul>
-                            <li>1950+ nodos</li>
-                            <li>100+ controles anim. cuerpo</li>
-                            <li>45+ controles anim. faciales</li>
-                            <li>790+ atributos animables</li>
+                            <li>1950+ nodos.</li>
+                            <li>100+ controles anim. cuerpo.</li>
+                            <li>45+ controles anim. faciales.</li>
+                            <li>790+ atributos animables.</li>
                             <li>...</li>
                         </ul>
                     </section>
@@ -142,12 +140,10 @@
                     <section>
                         <h1>Python!</h1>
                         <ul>
-                            <li>Lenguaje de uso general</li>
-                            <li>Licencia de código abierto</li>
-                            <li>Interpretado, tipado dinámico, multiplataforma</li>
-                            <li>Sintaxis muy limpia, código legible</li>
-                            <li>Baterías incluídas (std library)</li>
-                            <li>Multiparadigma</li>
+                            <li>Lenguaje de uso general.</li>
+                            <li>Licencia de código abierto.</li>
+                            <li>Baterías incluídas (std library).</li>
+                            <li>Sintaxis muy limpia, código legible.</li>
                             <li>...</li>
                         </ul>
                     </section>
@@ -155,18 +151,17 @@
                     <section>
                         <h2><a href="http://legacy.python.org/dev/peps/pep-0020/">PEP 20</a> - The Zen of Python</h2>
                         <ul>
-                            <li>Beautiful is better than ugly</li>
-                            <li>Explicit is better than implicit</li>
-                            <li>Simple is better than complex</li>
-                            <li>Complex is better than complicated</li>
-                            <li>Readability counts</li>
+                            <li>Beautiful is better than ugly.</li>
+                            <li>Explicit is better than implicit.</li>
+                            <li>Simple is better than complex.</li>
+                            <li>Complex is better than complicated.</li>
+                            <li>Readability counts.</li>
                             <li>...</li>
                         </ul>
                     </section>
 
                     <section>
                         <h1>Qt Bindings</h1>
-                        <h3>Qt (c++ UI framework) en python.</h3>
                         <ul>
                             <li><a href="http://www.riverbankcomputing.com/software/pyqt/intro">PyQt</a> - GNU General Public License v3, commercial</li>
                             <li><a href="http://qt-project.org/wiki/PySide">PySide</a> - LGPL version 2.1 (incluído en Maya &gt;= 2014)</li>
@@ -181,9 +176,9 @@
                     <section>
                         <h1>Python en Maya</h1>
                         <ul>
-                            <li><i>cmds</i>: acceso a comandos MEL en python</li>
-                            <li><i>pymel</i>: implementación 'pythonic' de python en Maya</li>
-                            <li><i>openmaya</i>: acceso a la API de maya (bajo nivel)</li>
+                            <li><i>cmds</i>: acceso a comandos MEL en python.</li>
+                            <li><i>openmaya</i>: acceso a la API de maya (bajo nivel).</li>
+                            <li><i>pymel</i>: implementación 'idiomática' de python en Maya.</li>
                         </ul>
                     </section>
 
@@ -197,7 +192,7 @@
 
                     <section>
                         <h1>picker_v1.py</h1>
-                        <p><pre><code class="python">
+                        <pre><code class="python">
 from maya import cmds  # importamos los comandos de maya
 
 
@@ -211,7 +206,7 @@ cmds.button(label="Head", height=30, backgroundColor=(0.9, 0.7, 0.1),
 ...
 
 cmds.showWindow(w)  # abrimos la ventana
-                        </code></pre></p>
+                        </code></pre>
                     </section>
 
                     <section>
@@ -220,7 +215,7 @@ cmds.showWindow(w)  # abrimos la ventana
 
                     <section>
                         <h2>Estructura de datos</h2>
-                        <p><pre><code class="markdown">
+                        <pre><code class="markdown">
 ### Version 0.1:
 
     {
@@ -249,12 +244,12 @@ cmds.showWindow(w)  # abrimos la ventana
         * name: `str` que representa el nombre del botón
         * targets: `list`/`tuple` de aliases a seleccionar (anim_table)
         * color: `str` con el 'alias' correspondiente en color_table
-                        </code></pre></p>
+                        </code></pre>
                     </section>
 
                     <section>
                         <h1>Datos (json)</h1>
-                        <p><pre><code class="python">
+                        <pre><code class="python">
 import json
 
 
@@ -267,12 +262,12 @@ with open(file_path) as fp:
 # Exportar a json
 with open(file_path, "w") as fp:  # abrimos en modo escritura!
     json.dump(fp, data)
-                        </code></pre></p>
+                        </code></pre>
                     </section>
 
                     <section>
                         <h1>picker_v2.py</h1>
-                        <p><pre><code class="python">
+                        <pre><code class="python">
 import json
 from maya import cmds
 
@@ -294,16 +289,17 @@ json_file = r"W:\dev\slides_picker\code\picker_cmds\data.json"
 with open(json_file) as fp:
     d = json.load(fp)  # importamos datos
 open_picker(d)
-                        </code></pre></p>
+                        </code></pre>
                     </section>
 
                     <section>
                         <h2>Limitaciones:</h2>
                         <ul>
                             <li>Diseño de la GUI mediante código.</li>
-                            <li>Opciones de posicionamiento limitadas.</li>
+                            <li>Opciones de posicionamiento (layout) limitado.</li>
+                            <li>Conjunto de elementos (widgets) limitados.</li>
                             <li>No es posible usar imágenes/iconos.</li>
-                            <li>Botones rectangulares.</li>
+                            <li>Dificultad con interfaces dinámicas.</li>
                         </ul>
                     </section>
 
@@ -336,7 +332,7 @@ open_picker(d)
 
                     <section>
                         <h2>1. xxx.ui → xxx.py</h2>
-                        <p><pre><code class="python">
+                        <pre><code class="python">
 # file: pyside-uic.py
 
 import sys
@@ -350,7 +346,7 @@ def convert(ui_file):
 
 if __name__ == "__main__" and len(sys.argv) == 2:
     convert(sys.argv[1])
-                        </code></pre></p>
+                        </code></pre>
                         <p style="text-align: right">
                             <small><a href="http://download.autodesk.com/global/docs/maya2014/en_us/files/GUID-FAD0F6CC-15D0-4489-9372-028146B70F49.htm">*Documentación</a></small>
                         </p>
@@ -358,7 +354,7 @@ if __name__ == "__main__" and len(sys.argv) == 2:
 
                     <section>
                         <h2>2. Maya MainWindow</h2>
-                        <p><pre><code class="python">
+                        <pre><code class="python">
 # file: qt_utils.py
 
 from PySide.QtGui import QMainWindow # qt widget
@@ -369,12 +365,12 @@ from maya.OpenMayaUI import MQtUtil  # utilidades Qt maya
 def get_anchor():
     ptr = MQtUtil.mainWindow()  # puntero a la ventana de maya (c++)
     return wrapInstance(long(ptr), QMainWindow)  # instancia QMainWindow desde ptr
-                        </code></pre></p>
+                        </code></pre>
                     </section>
 
                     <section>
                         <h1>1 + 2 ↴</h1>
-                        <p><pre><code class="python">
+                        <pre><code class="python">
 from qt_utils import get_anchor  # maya mainwindow
 from picker import Dialog_Ui  # ui convertido
 
@@ -393,16 +389,14 @@ class Picker(DialogUi):  # heredamos del ui convertido
 
 app = Picker(parent=get_anchor())
 app.show()
-                        </code></pre></p>
+                        </code></pre>
                     </section>
 
                     <section>
                         <h2>Limitaciones:</h2>
                         <ul>
-                            <li><span class="fragment fade-out">GUI estática, válida para 1 rig (Mario)</span></li>
-                            <li><span class="fragment fade-out">No es posible usar imágenes/iconos</span></li>
-                            <li><span class="fragment fade-out">Control limitado mediante layouts</span></li>
-                            <li><span class="fragment fade-out">Diseño de la GUI mediante código</span></li>
+                            <li>Diseño estático, válido para bipedos</li>
+                            <li>GUI no se ajusta al tamaño dela ventana.</li>
                             <li>Sólo botones rectangulares</li>
                         </ul>
                     </section>
@@ -425,8 +419,37 @@ app.show()
 
 
                 <section>
-                    <h1>GRACIAS</h1>
-                    <h4>Cesar Saez | <a href="http://cesarsaez.me">http://cesarsaez.me</a></h4>
+                    <section>
+                        <h1>Conclusiones</h1>
+                    </section>
+
+                    <section>
+                        <h2>+control → +gestión</h2>
+                            <p>Complejidad del rig "obliga" a ofrecer alternativas al viewport.</p>
+                    </section>
+
+                    <section>
+                        <h2>Funciones nativas</h2>
+                        <p>Sinópticos plantean retos a las funciones nativas de Maya, tanto para MEL cono Python.</p>
+                    </section>
+
+                    <section>
+                        <h1>Qt</h1>
+                        <p>Podemos "saltarnos" las limitaciones de Maya mediante Qt en python.</p>
+                    </section>
+
+                    <section>
+                        <h3>Maya < Qt (designer) < Qt (canvas)</h3>
+                        <br><br>
+                        <p>Nada es gratis, +versatilidad → +trabajo.</li>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>GRACIAS</h1>
+                        <h4>Cesar Saez | <a href="http://cesarsaez.me">http://cesarsaez.me</a></h4>
+                    </section>
                 </section>
             </div>
         </div>
