@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>390</width>
-    <height>610</height>
+    <height>630</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Character Picker</string>
   </property>
-  <widget class="QPushButton" name="pushButton_89">
+  <widget class="QPushButton" name="rt_toe">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -27,7 +27,7 @@
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_57">
+  <widget class="QPushButton" name="rt_ring2">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -54,7 +54,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(170, 25, 25);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_40">
+  <widget class="QPushButton" name="lf_pinkey3">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -68,7 +68,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_45">
+  <widget class="QPushButton" name="lf_arm_settings">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -96,7 +96,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_68">
+  <widget class="QPushButton" name="rt_middle3">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -110,7 +110,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_54">
+  <widget class="QPushButton" name="rt_index3">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -124,7 +124,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_56">
+  <widget class="QPushButton" name="rt_index0">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -138,7 +138,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_53">
+  <widget class="QPushButton" name="rt_arm_settings">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -151,7 +151,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(235, 48, 48);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_64">
+  <widget class="QPushButton" name="rt_ring0">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -165,7 +165,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_55">
+  <widget class="QPushButton" name="rt_thumb2">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -179,7 +179,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_41">
+  <widget class="QPushButton" name="lf_thumb2">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -193,7 +193,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_17">
+  <widget class="QPushButton" name="rt_kneeIK">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -210,7 +210,7 @@ color: rgb(220, 220, 220);</string>
     <string>IK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_35">
+  <widget class="QPushButton" name="lf_pinkey2">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -224,7 +224,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_69">
+  <widget class="QPushButton" name="rt_middle2">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -238,7 +238,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_38">
+  <widget class="QPushButton" name="lf_index3">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -268,7 +268,7 @@ color: rgb(255, 255, 255);</string>
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_26">
+  <widget class="QPushButton" name="lf_pinkey0">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -292,14 +292,14 @@ color: rgb(255, 255, 255);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 127);
+    <string notr="true">background-color: rgb(32, 32, 107);
 color: rgb(218, 218, 218);</string>
    </property>
    <property name="text">
     <string>IK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_59">
+  <widget class="QPushButton" name="rt_pinkey2">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -313,7 +313,7 @@ color: rgb(218, 218, 218);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_37">
+  <widget class="QPushButton" name="lf_middle3">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -341,7 +341,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_50">
+  <widget class="QPushButton" name="cn_lowbody_bend">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -354,7 +354,7 @@ color: rgb(255, 255, 255);</string>
     <string notr="true">background-color: rgb(255, 170, 127);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_65">
+  <widget class="QPushButton" name="rt_pinkey0">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -368,7 +368,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_82">
+  <widget class="QPushButton" name="rt_forearm_bend">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -381,7 +381,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(170, 25, 25);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_62">
+  <widget class="QPushButton" name="rt_ring1">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -395,7 +395,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_9">
+  <widget class="QPushButton" name="lf_elbow_bend">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -408,7 +408,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(0, 170, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_70">
+  <widget class="QPushButton" name="rt_thumb1">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -422,7 +422,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_87">
+  <widget class="QPushButton" name="cn_base">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -435,7 +435,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(255, 170, 127);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_67">
+  <widget class="QPushButton" name="rt_thumb3">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -449,7 +449,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_83">
+  <widget class="QPushButton" name="rt_elbow_bend">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -462,7 +462,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(170, 25, 25);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_34">
+  <widget class="QPushButton" name="lf_index2">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -476,7 +476,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_52">
+  <widget class="QPushButton" name="cn_midbody_bend">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -489,7 +489,7 @@ color: rgb(255, 255, 255);</string>
     <string notr="true">background-color: rgb(255, 170, 127);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_72">
+  <widget class="QPushButton" name="rt_index1">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -503,7 +503,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_75">
+  <widget class="QPushButton" name="rt_upleg_bend">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -530,7 +530,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_13">
+  <widget class="QPushButton" name="rt_kneeFK">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -544,7 +544,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_77">
+  <widget class="QPushButton" name="rt_leg_settings">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -557,7 +557,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(235, 48, 48);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_78">
+  <widget class="QPushButton" name="rt_clavicle">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -571,7 +571,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_66">
+  <widget class="QPushButton" name="rt_pinkey3">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -585,7 +585,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_24">
+  <widget class="QPushButton" name="lf_middle0">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -599,7 +599,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_79">
+  <widget class="QPushButton" name="rt_shoulderFK">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -613,7 +613,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_42">
+  <widget class="QPushButton" name="lf_thumb3">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -627,7 +627,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_47">
+  <widget class="QPushButton" name="lf_knee_bend">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -640,7 +640,7 @@ color: rgb(255, 255, 255);</string>
     <string notr="true">background-color: rgb(0, 170, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_32">
+  <widget class="QPushButton" name="lf_ring1">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -664,14 +664,14 @@ color: rgb(255, 255, 255);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 127);
+    <string notr="true">background-color: rgb(32, 32, 107);
 color: rgb(218, 218, 218);</string>
    </property>
    <property name="text">
     <string>IK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_74">
+  <widget class="QPushButton" name="rt_lowleg_bend">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -684,7 +684,7 @@ color: rgb(218, 218, 218);</string>
     <string notr="true">background-color: rgb(170, 25, 25);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_46">
+  <widget class="QPushButton" name="lf_leg_settings">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -698,7 +698,7 @@ color: rgb(218, 218, 218);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_27">
+  <widget class="QPushButton" name="lf_thumb1">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -725,7 +725,7 @@ color: rgb(255, 255, 255);</string>
     <string notr="true">background-color: rgb(255, 170, 127);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_81">
+  <widget class="QPushButton" name="rt_elbowFK">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -739,7 +739,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_33">
+  <widget class="QPushButton" name="lf_ring2">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -767,7 +767,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_60">
+  <widget class="QPushButton" name="rt_middle1">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -781,7 +781,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_43">
+  <widget class="QPushButton" name="lf_arm_bend">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -794,7 +794,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(0, 170, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_48">
+  <widget class="QPushButton" name="lf_upleg_bend">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -807,7 +807,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(0, 170, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_19">
+  <widget class="QPushButton" name="rt_footFK">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -821,7 +821,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_36">
+  <widget class="QPushButton" name="lf_middle2">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -835,7 +835,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_49">
+  <widget class="QPushButton" name="lf_lowleg_bend">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -848,7 +848,7 @@ color: rgb(255, 255, 255);</string>
     <string notr="true">background-color: rgb(0, 170, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_18">
+  <widget class="QPushButton" name="rt_footIK">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -879,7 +879,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_44">
+  <widget class="QPushButton" name="lf_forearm_bend">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -892,7 +892,7 @@ color: rgb(255, 255, 255);</string>
     <string notr="true">background-color: rgb(0, 170, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_12">
+  <widget class="QPushButton" name="rt_hipFK">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -906,7 +906,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_85">
+  <widget class="QPushButton" name="rt_handIK">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -936,7 +936,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(240, 200, 40);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_31">
+  <widget class="QPushButton" name="lf_index1">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -950,7 +950,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_84">
+  <widget class="QPushButton" name="rt_arm_bend">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -963,7 +963,7 @@ color: rgb(255, 255, 255);</string>
     <string notr="true">background-color: rgb(170, 25, 25);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_58">
+  <widget class="QPushButton" name="rt_middle0">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -990,7 +990,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(170, 25, 25);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_22">
+  <widget class="QPushButton" name="lf_armPole">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -1000,14 +1000,14 @@ color: rgb(220, 220, 220);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 107);
+    <string notr="true">background-color: rgb(32, 32, 107);
 color: rgb(218, 218, 218);</string>
    </property>
    <property name="text">
     <string>IK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_25">
+  <widget class="QPushButton" name="lf_ring0">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -1021,7 +1021,7 @@ color: rgb(218, 218, 218);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_51">
+  <widget class="QPushButton" name="cn_topbody_bend">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -1044,7 +1044,7 @@ color: rgb(255, 255, 255);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 107);
+    <string notr="true">background-color: rgb(32, 32, 107);
 color: rgb(218, 218, 218);</string>
    </property>
   </widget>
@@ -1061,7 +1061,7 @@ color: rgb(218, 218, 218);</string>
     <string notr="true">background-color: rgb(240, 200, 40);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_29">
+  <widget class="QPushButton" name="lf_pinkey1">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -1075,7 +1075,7 @@ color: rgb(218, 218, 218);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_30">
+  <widget class="QPushButton" name="lf_middle1">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -1103,7 +1103,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_23">
+  <widget class="QPushButton" name="lf_index0">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -1117,7 +1117,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_80">
+  <widget class="QPushButton" name="rt_armPole">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -1134,7 +1134,7 @@ color: rgb(220, 220, 220);</string>
     <string>IK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_71">
+  <widget class="QPushButton" name="rt_ring3">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -1148,7 +1148,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_86">
+  <widget class="QPushButton" name="lf_handIK">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -1158,14 +1158,14 @@ color: rgb(220, 220, 220);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 107);
+    <string notr="true">background-color: rgb(32, 32, 107);
 color: rgb(218, 218, 218);</string>
    </property>
    <property name="text">
     <string>IK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_63">
+  <widget class="QPushButton" name="rt_handFK">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -1192,7 +1192,7 @@ color: rgb(220, 220, 220);</string>
     <string notr="true">background-color: rgb(240, 200, 40);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_73">
+  <widget class="QPushButton" name="rt_index2">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -1206,7 +1206,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_61">
+  <widget class="QPushButton" name="rt_pinkey1">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -1220,7 +1220,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(220, 220, 220);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_76">
+  <widget class="QPushButton" name="rt_knee_bend">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -1247,7 +1247,7 @@ color: rgb(220, 220, 220);</string>
 color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_39">
+  <widget class="QPushButton" name="lf_ring3">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -1259,6 +1259,23 @@ color: rgb(255, 255, 255);</string>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(60, 60, 135);
 color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="select_all">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>600</y>
+     <width>370</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(200, 200, 200);
+background-color: rgb(50, 50, 50);</string>
+   </property>
+   <property name="text">
+    <string>SELECT ALL</string>
    </property>
   </widget>
  </widget>

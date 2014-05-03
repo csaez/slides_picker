@@ -73,17 +73,17 @@
                     <section>
                         <h2>La víctima: Mario</h2>
                         <p>
-                          <img src="images/mario.jpg" alt="Mario rig" height="600px">
+                          <img src="images/mario_rig.png" alt="Mario rig" height="600px">
                         </p>
                     </section>
 
                     <section>
                         <h2>Los números de Mario:</h2>
                         <ul>
-                            <li>1950+ nodos.</li>
-                            <li>100+ controles anim. cuerpo.</li>
-                            <li>45+ controles anim. faciales.</li>
+                            <li>115 controles anim. cuerpo.</li>
+                            <li>46 controles anim. faciales.</li>
                             <li>790+ atributos animables.</li>
+                            <li>1950+ nodos.</li>
                             <li>...</li>
                         </ul>
                     </section>
@@ -193,19 +193,18 @@
                     <section>
                         <h1>picker_v1.py</h1>
                         <pre><code class="python">
-from maya import cmds  # importamos los comandos de maya
+from maya import cmds                                                    # importamos cmds
 
 
-w = cmds.window(title="Picker", width=300)  # nueva ventana
-cmds.columnLayout(adjustableColumn=True)  # layout vertical
-cmds.text(label="char: mario_rig", height=30)  # etiqueta
+w = cmds.window(title="Picker", width=300)                               # nueva ventana
+cmds.columnLayout(adjustableColumn=True)                                 # layout vertical
+cmds.text(label="char: mario_rig", height=30)                            # nombre personaje
 
-# botones
 cmds.button(label="Head", height=30, backgroundColor=(0.9, 0.7, 0.1),
-            command=lambda _: cmds.select("mario_rig:mario_ac_cn_head"))
+            command=lambda _: cmds.select("mario_rig:mario_ac_cn_head")) # botones
 ...
 
-cmds.showWindow(w)  # abrimos la ventana
+cmds.showWindow(w)                                                       # abrimos ventana
                         </code></pre>
                     </section>
 
@@ -267,29 +266,29 @@ with open(file_path, "w") as fp:  # abrimos en modo escritura!
 
                     <section>
                         <h1>picker_v2.py</h1>
-                        <pre><code class="python">
-import json
+                        <pre><code class="python">import json
 from maya import cmds
+
 
 def open_picker(data, w=300, h=30):
     if not all((data.get("filetype") == "picker_data",
-                data.get("version") &gt;= 0.1)):
-        return False  # datos inválidos, abortar
-    w = cmds.window(title="Picker", width=w)  # nueva ventana
-    cmds.columnLayout(adjustableColumn=True)  # layout vertical
-    cmds.text(label="char: " + data["charname"], height=h)  # nombre del personaje
-    for btn in data.get("selectors"):  # botones
-        targets = [data["anim_table"].get(x) for x in btn["targets"]]  # targets
-        cmds.button(label=btn["name"], height=h,
-                    backgroundColor=data["color_table"].get(btn["color"]),
-                    command=lambda _, t=targets: cmds.select(t))  # creamos boton
-    cmds.showWindow(w)  # abrimos la ventana
+                data.get("version") >= 0.1)):                          # validamos
+        return False
+    w = cmds.window(title="Picker", width=w)                           # nueva ventana
+    cmds.columnLayout(adjustableColumn=True)                           # layout vertical
+    cmds.text(label="char: " + data["charname"], height=h)             # nombre personaje
+    for btn in data["selectors"]:
+        targets = [data["anim_table"].get(x) for x in btn["targets"]]
+        cmds.button(
+            label=btn["name"], height=h,
+            backgroundColor=data["color_table"].get(btn["color"]),
+            command=lambda _, t=targets: cmds.select(t))               # creamos boton
+    cmds.showWindow(w)                                                 # abrimos la ventana
 
-json_file = r"W:\dev\slides_picker\code\picker_cmds\data.json"
+json_file = r"W:\slides\slides_picker\code\cmds\data.json"             # fichero json
 with open(json_file) as fp:
-    d = json.load(fp)  # importamos datos
-open_picker(d)
-                        </code></pre>
+    d = json.load(fp)                                                  # importamos datos
+open_picker(d)</code></pre>
                     </section>
 
                     <section>
@@ -331,7 +330,7 @@ open_picker(d)
                     </section>
 
                     <section>
-                        <h2>1. xxx.ui → xxx.py</h2>
+                        <h2>1. dummy.ui → dummy.py</h2>
                         <pre><code class="python">
 # file: pyside-uic.py
 
@@ -347,6 +346,8 @@ def convert(ui_file):
 if __name__ == "__main__" and len(sys.argv) == 2:
     convert(sys.argv[1])
                         </code></pre>
+                        <br>
+                        <pre><code class="shell">"c:\Program Files\Autodesk\Maya2014\bin\mayapy.exe" pyside-uic.py dummy.ui</code></pre>
                         <p style="text-align: right">
                             <small><a href="http://download.autodesk.com/global/docs/maya2014/en_us/files/GUID-FAD0F6CC-15D0-4489-9372-028146B70F49.htm">*Documentación</a></small>
                         </p>
@@ -357,39 +358,68 @@ if __name__ == "__main__" and len(sys.argv) == 2:
                         <pre><code class="python">
 # file: qt_utils.py
 
-from PySide.QtGui import QMainWindow # qt widget
-from shiboken import wrapInstance    # parte de lib PySide
-from maya.OpenMayaUI import MQtUtil  # utilidades Qt maya
+from PySide.QtGui import QMainWindow                   # qt widget
+from shiboken import wrapInstance                      # parte de lib PySide
+from maya.OpenMayaUI import MQtUtil                    # utilidades Qt maya
 
 
 def get_anchor():
-    ptr = MQtUtil.mainWindow()  # puntero a la ventana de maya (c++)
-    return wrapInstance(long(ptr), QMainWindow)  # instancia QMainWindow desde ptr
+    ptr = MQtUtil.mainWindow()                         # puntero a la ventana de maya (c++)
+    return wrapInstance(long(ptr), QMainWindow)        # instancia QMainWindow desde ptr
                         </code></pre>
                     </section>
 
                     <section>
                         <h1>1 + 2 ↴</h1>
                         <pre><code class="python">
-from qt_utils import get_anchor  # maya mainwindow
-from picker import Dialog_Ui  # ui convertido
+from PySide.QtGui import QDialog                            # dialogo genérico Qt
+from qt_utils import get_anchor                             # maya mainwindow
+from dummy import Ui_Dialog                                 # ui convertido
 
-class Picker(DialogUi):  # heredamos del ui convertido
+picker = QDialog(parent=get_anchor())                       # creamos dialogo en maya
+ui = Ui_Dialog()
+ui.setupUi(picker)                                          # transferimos gui desde dummy
+picker.show()                                               # abrimos dialogo
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <img src="images/mario_designer2.png" alt="Designer en maya">
+                    </section>
+
+                    <section>
+                        <h1>Signals & Slots</h1>
+                        <p>Mecanismo Qt que nos permite implementar los 'callbacks' de la gui.</p>
+                        <ul>
+                            <li>Signals: Los widgets Qt emiten señales advirtiendo un evento.</li>
+                            <li>Slots: Funciones que se ejecutan al recibir la señal.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Incorporando datos</h2>
+                        <pre><code>from PySide.QtGui import QDialog
+from qt_utils import get_anchor
+from dummy import Ui_Dialog
+from maya import cmds
+
+class Picker(QDialog):
+
     def __init__(self, parent, data):
         super(Picker, self).__init__(parent)
-        self.data = data
-        self.connect_buttons()  # conectamos botones
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self)
+        for k, v in data["anim_table"].iteritems():
+            if hasattr(self.ui, k):
+                getattr(self.ui, k).clicked.connect(lambda target=v: cmds.select(target))
+        self.ui.select_all.clicked.connect(
+            lambda target=data["anim_table"].values(): cmds.select(target))
 
-    def connect_buttons(self):
-        for w in self.children():
-            if not w.objectName().startswith("ui_"):
-                continue
-            target_names = self.data.get(w.objectName())
-            w.connect.clicked(lambda t=target_names: cmds.select(t))
-
-app = Picker(parent=get_anchor())
-app.show()
-                        </code></pre>
+json_file = r"W:\slides\slides_picker\code\cmds\data.json"
+with open(json_file) as fp:
+    d = json.load(fp)
+if d.get("filetype") == "picker_data" and d.get("version") >= 0.1:
+    picker = Picker(parent=get_anchor(), data=d)
+    picker.show()</code></pre>
                     </section>
 
                     <section>
@@ -409,6 +439,11 @@ app.show()
                 <section data-background="#71934E">
                     <section>
                         <h1>QGraphicsScene (a.k.a. canvas)</h1>
+                    </section>
+
+                    <section>
+                        <h2>"Un gran poder conlleva una gran responsabilidad."</h2>
+                        <h2 style="text-align: right;">- Ben Parker</h2>
                     </section>
 
                     <section>
