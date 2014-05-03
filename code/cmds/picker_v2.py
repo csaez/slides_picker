@@ -28,5 +28,5 @@ def open_picker(data, w=300, h=30):
                     command=lambda _, t=targets: cmds.select(t))
     cmds.showWindow(w)  # abrimos la ventana
 
-d = from_json(r"W:\dev\slides_picker\code\cmds\data.json")
+d = from_json(r"W:\slides\slides_picker\code\cmds\data.json")
 open_picker(d)
