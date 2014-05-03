@@ -51,11 +51,11 @@
                     <ul>
                         <li>Sinópticos</li>
                         <li>Python</li>
-                        <li>Maya APIs (cmds, pymel, openmaya)</li>
-                        <li>Qt (PyQt4, PySide)
+                        <li>Maya APIs (cmds, openmaya, pymel)</li>
+                        <li>Qt (PyQt, PySide)
                             <ul>
-                                <li>Qt Designer</li>
-                                <li>QGraphicsScene (canvas)</li>
+                                <li>Designer</li>
+                                <li>Graphics View Framework</li>
                             </ul>
                         </li>
                     </ul>
@@ -112,11 +112,6 @@
                     <section>
                         <p><img src="images/picker_unreal.jpg" alt="Unreal Engine Picker" height="600px"></p>
                         <p><small>Unreal Engine 4, <a href="https://www.unrealengine.com/blog/animation-rigging-toolkit-in-ue4">Epic Games</a></small></p>
-                    </section>
-
-                    <section>
-                        <p><img src="images/picker_pirates.png" alt="The Pirates"></p>
-                        <p><small>The Pirates, <a href="https://www.youtube.com/watch?v=eskCem1xaIs">Martin Orlowski</a> - <a href="http://aardman.com">Aardman</a></small></p>
                     </section>
 
                     <section>
@@ -269,18 +264,18 @@ with open(file_path, "w") as fp:  # abrimos en modo escritura!
                         <pre><code class="python">import json
 from maya import cmds
 
-
 def open_picker(data, w=300, h=30):
     if not all((data.get("filetype") == "picker_data",
-                data.get("version") >= 0.1)):                          # validamos
+                data.get("version") &gt;= 0.1)):                          # validamos
         return False
+
     w = cmds.window(title="Picker", width=w)                           # nueva ventana
     cmds.columnLayout(adjustableColumn=True)                           # layout vertical
     cmds.text(label="char: " + data["charname"], height=h)             # nombre personaje
+
     for btn in data["selectors"]:
         targets = [data["anim_table"].get(x) for x in btn["targets"]]
-        cmds.button(
-            label=btn["name"], height=h,
+        cmds.button(label=btn["name"], height=h,
             backgroundColor=data["color_table"].get(btn["color"]),
             command=lambda _, t=targets: cmds.select(t))               # creamos boton
     cmds.showWindow(w)                                                 # abrimos la ventana
@@ -321,8 +316,8 @@ open_picker(d)</code></pre>
                     </section>
 
                     <section>
-                        <h1>Qt Designer</h1>
-                        <h3>.../autodesk/mayaXXXX/bin/designer</h3>
+                        <h1>Designer</h1>
+                        <h3>.../autodesk/maya2014/bin/designer</h3>
                     </section>
 
                     <section>
@@ -373,12 +368,17 @@ def get_anchor():
                         <h1>1 + 2 ↴</h1>
                         <pre><code class="python">
 from PySide.QtGui import QDialog                            # dialogo genérico Qt
-from qt_utils import get_anchor                             # maya mainwindow
 from dummy import Ui_Dialog                                 # ui convertido
+from qt_utils import get_anchor                             # maya mainwindow
 
-picker = QDialog(parent=get_anchor())                       # creamos dialogo en maya
-ui = Ui_Dialog()
-ui.setupUi(picker)                                          # transferimos gui desde dummy
+
+class Picker(QDialog):                                      # extendemos clase QDialog
+    def __init__(parent):
+        super(Picker, self).__init__(parent)
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self)                               # transferimos botones
+
+picker = Picker(parent=get_anchor())                        # creamos dialogo
 picker.show()                                               # abrimos dialogo
                         </code></pre>
                     </section>
@@ -389,7 +389,7 @@ picker.show()                                               # abrimos dialogo
 
                     <section>
                         <h1>Signals & Slots</h1>
-                        <p>Mecanismo Qt que nos permite implementar los 'callbacks' de la gui.</p>
+                        <p>Mecanismo que nos permite implementar los 'callbacks' de la GUI.</p>
                         <ul>
                             <li>Signals: Los widgets Qt emiten señales advirtiendo un evento.</li>
                             <li>Slots: Funciones que se ejecutan al recibir la señal.</li>
@@ -398,16 +398,16 @@ picker.show()                                               # abrimos dialogo
                     <section>
                         <h2>Incorporando datos</h2>
                         <pre><code>from PySide.QtGui import QDialog
-from qt_utils import get_anchor
 from dummy import Ui_Dialog
+from qt_utils import get_anchor
 from maya import cmds
 
 class Picker(QDialog):
-
     def __init__(self, parent, data):
         super(Picker, self).__init__(parent)
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
+        # señales
         for k, v in data["anim_table"].iteritems():
             if hasattr(self.ui, k):
                 getattr(self.ui, k).clicked.connect(lambda target=v: cmds.select(target))
@@ -417,7 +417,7 @@ class Picker(QDialog):
 json_file = r"W:\slides\slides_picker\code\cmds\data.json"
 with open(json_file) as fp:
     d = json.load(fp)
-if d.get("filetype") == "picker_data" and d.get("version") >= 0.1:
+if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:
     picker = Picker(parent=get_anchor(), data=d)
     picker.show()</code></pre>
                     </section>
@@ -426,7 +426,7 @@ if d.get("filetype") == "picker_data" and d.get("version") >= 0.1:
                         <h2>Limitaciones:</h2>
                         <ul>
                             <li>Diseño estático.</li>
-                            <li>Sólo botones rectangulares.</li>
+                            <li>Botones rectangulares.</li>
                         </ul>
                     </section>
 
@@ -438,12 +438,26 @@ if d.get("filetype") == "picker_data" and d.get("version") >= 0.1:
 
                 <section data-background="#71934E">
                     <section>
-                        <h1>QGraphicsScene (a.k.a. canvas)</h1>
+                        <h1>Graphics View <a href="http://qt-project.org/doc/qt-4.8/graphicsview.html">Framework</a></h1>
+                        <h1>(canvas)</h1>
+                    </section>
+
+                    <section>
+                        <h2>QGraphics<a href="http://qt-project.org/doc/qt-4.8/qgraphicsscene.html">Scene</a></h2>
+                        <p>Superficie 2D que contiene QGraphicsItems (sistema coordenadas).</p>
+                        <br><br>
+                        <h2>QGraphics<a href="http://qt-project.org/doc/qt-4.8/qgraphicsview.html">View</a></h2>
+                        <p>Vista mediante la cual observamos la escena (cámara).</p>
+                        <br><br>
+                        <h2>QGraphics<a href="http://qt-project.org/doc/qt-4.8/qgraphicsitem.html">Item</a></h2>
+                        <p>Líneas, rectángulos, elipses, polígonos, imágenes, texto, etc.</p>
+                        <br>
                     </section>
 
                     <section>
                         <h2>"Un gran poder conlleva una gran responsabilidad."</h2>
-                        <h2 style="text-align: right;">- Ben Parker</h2>
+                        <br><br>
+                        <h2 style="text-align: right;">Ben Parker</h2>
                     </section>
 
                     <section>
@@ -475,7 +489,7 @@ if d.get("filetype") == "picker_data" and d.get("version") >= 0.1:
                     <section>
                         <h3>cmds < Qt (designer) < Qt (canvas)</h3>
                         <br><br>
-                        <p>Nada es gratis, +versatilidad → +trabajo.</li>
+                        <p>Nada es gratis, +flexibilidad → +trabajo.</li>
                     </section>
                 </section>
 
