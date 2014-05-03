@@ -187,10 +187,6 @@
                     </section>
 
                     <section>
-                        <p><img src="images/mario_cmds.png" alt="Mario GUI (cmds)"></p>
-                    </section>
-
-                    <section>
                         <h1>picker_v1.py</h1>
                         <pre><code class="python">
 from maya import cmds                                                    # importamos cmds
@@ -206,6 +202,10 @@ cmds.button(label="Head", height=30, backgroundColor=(0.9, 0.7, 0.1),
 
 cmds.showWindow(w)                                                       # abrimos ventana
                         </code></pre>
+                    </section>
+
+                    <section>
+                        <p><img src="images/mario_cmds.png" alt="Mario GUI (cmds)"></p>
                     </section>
 
                     <section>
@@ -459,21 +459,21 @@ if d.get("filetype") == "picker_data" and d.get("version") >= 0.1:
 
                     <section>
                         <h2>+control → +gestión</h2>
-                            <p>Complejidad del rig "obliga" a ofrecer alternativas al viewport.</p>
+                            <p>La complejidad del rig nos "obliga" a ofrecer alternativas al viewport 3D.</p>
                     </section>
 
                     <section>
                         <h2>Funciones nativas</h2>
-                        <p>Sinópticos plantean retos a las funciones nativas de Maya, tanto para MEL cono Python.</p>
+                        <p>Los sinópticos plantean retos a las funciones nativas de Maya, tanto en MEL como Python.</p>
                     </section>
 
                     <section>
-                        <h1>Qt</h1>
-                        <p>Podemos "saltarnos" las limitaciones de Maya mediante Qt en python.</p>
+                        <h1>Qt bindings</h1>
+                        <p>Podemos sortear las limitaciones de Maya utilizando Qt mediante librerías de Python (PySide, PyQt).</p>
                     </section>
 
                     <section>
-                        <h3>Maya < Qt (designer) < Qt (canvas)</h3>
+                        <h3>cmds < Qt (designer) < Qt (canvas)</h3>
                         <br><br>
                         <p>Nada es gratis, +versatilidad → +trabajo.</li>
                     </section>
