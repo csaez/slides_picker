@@ -40,10 +40,9 @@
             <div class="slides">
                 <section>
                     <h1>Character Picker</h1>
-                    <h3>... o cómo hacer un sinóptico corporal en Autodesk Maya.</h3>
-                    <p>
-                        <small>por <a href="http://cesarsaez.me">Cesar Saez</a> | <a href="http://twitter.com/csaezmargotta">@csaezmargotta</a></small>
-                    </p>
+                    <h4>... o cómo hacer un sinóptico corporal para Autodesk Maya.</h4>
+                    <br>
+                    <p>Cesar Saez, <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
                 </section>
 
                 <section>
@@ -66,7 +65,7 @@
                     <section>
                         <h1>Sinóptico?</h1>
                         <p>
-                            <strong>Interfaz gráfica</strong> mediante la cual 'no-riggers' interactúan con los rigs en producción, es su <i>centro de operaciones.</i>
+                            <strong>Interfaz gráfica</strong> mediante la cual 'no-riggers' interactúan con los rigs en producción, <i>centro de operaciones.</i>
                         </p>
                     </section>
 
@@ -265,25 +264,24 @@ with open(file_path, "w") as fp:  # abrimos en modo escritura!
 from maya import cmds
 
 def open_picker(data, w=300, h=30):
-    if not all((data.get("filetype") == "picker_data",
-                data.get("version") &gt;= 0.1)):                          # validamos
-        return False
-
     w = cmds.window(title="Picker", width=w)                           # nueva ventana
     cmds.columnLayout(adjustableColumn=True)                           # layout vertical
     cmds.text(label="char: " + data["charname"], height=h)             # nombre personaje
 
-    for btn in data["selectors"]:
+    for btn in data["selectors"]:                                      # loop selectores
         targets = [data["anim_table"].get(x) for x in btn["targets"]]
         cmds.button(label=btn["name"], height=h,
             backgroundColor=data["color_table"].get(btn["color"]),
             command=lambda _, t=targets: cmds.select(t))               # creamos boton
+
     cmds.showWindow(w)                                                 # abrimos la ventana
 
 json_file = r"W:\slides\slides_picker\code\cmds\data.json"             # fichero json
 with open(json_file) as fp:
     d = json.load(fp)                                                  # importamos datos
-open_picker(d)</code></pre>
+
+if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:     # validamos
+    open_picker(d)</code></pre>
                     </section>
 
                     <section>
@@ -388,7 +386,7 @@ picker.show()                                               # abrimos dialogo
                     </section>
 
                     <section>
-                        <h1>Signals & Slots</h1>
+                        <h1>Signals &#038; Slots</h1>
                         <p>Mecanismo que nos permite implementar los 'callbacks' de la GUI.</p>
                         <ul>
                             <li>Signals: Los widgets Qt emiten señales advirtiendo un evento.</li>
@@ -487,7 +485,7 @@ if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:
                     </section>
 
                     <section>
-                        <h3>cmds < Qt (designer) < Qt (canvas)</h3>
+                        <h3>cmds &#060; Qt (designer) &#060; Qt (canvas)</h3>
                         <br><br>
                         <p>Nada es gratis, +flexibilidad → +trabajo.</li>
                     </section>
@@ -496,7 +494,7 @@ if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:
                 <section>
                     <section>
                         <h1>GRACIAS</h1>
-                        <h4>Cesar Saez | <a href="http://cesarsaez.me">http://cesarsaez.me</a></h4>
+                        <p>Cesar Saez, <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
                     </section>
                 </section>
             </div>

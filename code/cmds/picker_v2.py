@@ -9,10 +9,6 @@ def from_json(json_file):
 
 
 def open_picker(data, w=300, h=30):
-    validate = (data.get("filetype") == "picker_data",
-                data.get("version") >= 0.1)
-    if not all(validate):  # validamos data
-        return
     w = cmds.window(title="Picker", width=w)  # nueva ventana
     cmds.columnLayout(adjustableColumn=True)  # layout vertical
     # nombre del personaje
@@ -29,4 +25,5 @@ def open_picker(data, w=300, h=30):
     cmds.showWindow(w)  # abrimos la ventana
 
 d = from_json(r"W:\slides\slides_picker\code\cmds\data.json")
-open_picker(d)
+if d.get("filetype") == "picker_data" and d.get("version") >= 0.1:
+    open_picker(d)
