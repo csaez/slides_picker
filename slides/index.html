@@ -138,18 +138,7 @@
                             <li>Licencia de código abierto.</li>
                             <li>Baterías incluídas (std library).</li>
                             <li>Sintaxis muy limpia, código legible.</li>
-                            <li>...</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2><a href="http://legacy.python.org/dev/peps/pep-0020/">PEP 20</a> - The Zen of Python</h2>
-                        <ul>
-                            <li>Beautiful is better than ugly.</li>
-                            <li>Explicit is better than implicit.</li>
-                            <li>Simple is better than complex.</li>
-                            <li>Complex is better than complicated.</li>
-                            <li>Readability counts.</li>
+                            <li>Extensa documentación.</li>
                             <li>...</li>
                         </ul>
                     </section>
@@ -181,7 +170,7 @@
                     </section>
 
                     <section>
-                        <h1>picker_v1.py</h1>
+                        <h2>cmds/picker_v1.py</h2>
                         <pre><code class="python">
 from maya import cmds                                                    # importamos cmds
 
@@ -203,47 +192,27 @@ cmds.showWindow(w)                                                       # abrim
                     </section>
 
                     <section>
-                        <h1>Datos ↔ Lógica</h1>
+                        <h1>Datos != Lógica</h1>
                     </section>
 
                     <section>
-                        <h2>Estructura de datos</h2>
-                        <pre><code class="markdown">
-### Version 0.1:
-
-    {
-        "filetype": "picker_data",
-        "version": 0.1,
-        "charname": "",
-        "color_table": {key: value, ...},
-        "anim_table": {key: value, ...},
-        "selectors": ({"name": "",
-                       "targets": (anim_table key, ...),
-                       "color": color_table key,
-                      }, ...),
-    }
-
-* filetype: `str` que determina el tipo de información
-* version: `float` que determina la versión
-* charname: `str` que representa el nombre del personaje (namespace)
-* color_table: `dict` con tabla de colores
-    * key: `str` alias del color
-    * value: `tuple` componentes RGB normalizados (de 0.0 a 1.0)
-* anim_table: `dict` aliases controles de anim.
-    * key: `str` alias
-    * value: `str` con el nombre del nodo correspondiente
-* selectors: `list` / `tuple` de selectores
-    * item: `dict` que representa la informacion de un botón selector
-        * name: `str` que representa el nombre del botón
-        * targets: `list`/`tuple` de aliases a seleccionar (anim_table)
-        * color: `str` con el 'alias' correspondiente en color_table
-                        </code></pre>
+                        <h2>Datos (pseudo código)</h2>
+                        <pre><code class="python">{
+    "filetype": "picker_data",
+    "version": 0.1,
+    "charname": "",
+    "color_table": {color_key: (r, g, b), ...},
+    "anim_table": {anim_key: "node_name", ...},
+    "selectors": [{"name": "",
+                   "targets": (anim_key, ...),
+                   "color": color_key,
+                  }, ...],
+}</code></pre>
                     </section>
 
                     <section>
-                        <h1>Datos (json)</h1>
-                        <pre><code class="python">
-import json
+                        <h2>Datos ↔ xxx.json</h2>
+                        <pre><code class="python">import json
 
 
 file_path = "path/to/file.json"
@@ -254,12 +223,11 @@ with open(file_path) as fp:
 
 # Exportar a json
 with open(file_path, "w") as fp:  # abrimos en modo escritura!
-    json.dump(fp, data)
-                        </code></pre>
+    json.dump(fp, data)</code></pre>
                     </section>
 
                     <section>
-                        <h1>picker_v2.py</h1>
+                        <h2>cmds/picker_v2.py</h2>
                         <pre><code class="python">import json
 from maya import cmds
 
@@ -394,7 +362,7 @@ picker.show()                                               # abrimos dialogo
                         </ul>
                     </section>
                     <section>
-                        <h2>Incorporando datos</h2>
+                        <h2>designer/picker.py</h2>
                         <pre><code>from PySide.QtGui import QDialog
 from dummy import Ui_Dialog
 from qt_utils import get_anchor
@@ -441,6 +409,12 @@ if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:
                     </section>
 
                     <section>
+                        <h2>"Un gran poder conlleva una gran responsabilidad."</h2>
+                        <br><br>
+                        <h2 style="text-align: right;">Ben Parker</h2>
+                    </section>
+
+                    <section>
                         <h2>QGraphics<a href="http://qt-project.org/doc/qt-4.8/qgraphicsscene.html">Scene</a></h2>
                         <p>Superficie 2D que contiene QGraphicsItems (sistema coordenadas).</p>
                         <br><br>
@@ -453,13 +427,71 @@ if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:
                     </section>
 
                     <section>
-                        <h2>"Un gran poder conlleva una gran responsabilidad."</h2>
-                        <br><br>
-                        <h2 style="text-align: right;">Ben Parker</h2>
+                        <h1>Designer?</h1>
+                        <ul>
+                            <li>Programar un editor utilizando el propio framework.</li>
+                            <li>"Parsear" fichero vectorial (svg, eps).</li>
+                            <li class="fragment grow">Utilizar el viewport de Maya para dibujar la interface.</li>
+                            <li>...</li>
+                        </ul>
                     </section>
 
                     <section>
-                        <h1>...</h1>
+                        <img src="images/mario_canvas-maya.png" alt="Maya designer...">
+                    </section>
+
+                    <section>
+                        <h2>Maya → xxx.json</h2>
+                        <pre><code class="python">import json
+from maya import cmds
+
+data = {"filetype": "picker_data", "version": 0.2,
+        "color_table": {...},
+        "anim_table": {...},
+        "selectors": list()}
+
+for each in cmds.ls(sl):
+    cmds.select(each + ".vtx[0:]")
+    d = {"name": each, "target": (each, ),
+         "points": cmds.xform(q=True, t=True)}
+    data["selectors"].append(d)
+
+with open("W:\slides\slides_picker\code\canvas\dummy.json", "w") as fp:
+    json.dump(data, fp)</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>canvas/picker.py</h2>
+                        <pre><code class="python">class Polygon(QtGui.QGraphicsPolygonItem):
+    ...
+
+class Picker(QtGui.QGraphicsView):
+    def loadData(self, data):
+        self.scene().clear()
+        for d in data["selectors"]:
+            p = Polygon.fromPoints(d["points"])
+            p.name = d["name"]
+            p.color = [int(x * 255)
+                       for x in data["color_table"].get(d["color"])]
+            p.targets.extend([data["anim_table"].get(x) for x in d["targets"]])
+            p.setFlag(QtGui.QGraphicsItem.ItemIsSelectable, True)
+            self.scene().addItem(p)
+
+    def mouseReleaseEvent(self, event):
+        super(Picker, self).mouseReleaseEvent(event)
+        targets = [y for x in self.scene().selectedItems() for y in x.targets]
+        self.select(targets, int(event.modifiers()))
+        self.scene().clearSelection()
+
+    ...</code></pre>
+                    </section>
+
+                    <section>
+                        <img src="images/mario_canvas.png" alt="Mario canvas">
+                    </section>
+
+                    <section>
+                        <h1>Limitaciones?</h1>
                     </section>
                 </section>
 
@@ -475,8 +507,13 @@ if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:
                     </section>
 
                     <section>
-                        <h2>Funciones nativas</h2>
-                        <p>Los sinópticos plantean retos a las funciones nativas de Maya, tanto en MEL como Python.</p>
+                        <h1>Scripting</h1>
+                        <p>Maya no cuenta con una herramienta nativa para realizar sinópticos, pero podemos realizar la nuestra.</p>
+                    </section>
+
+                    <section>
+                        <h1>cmds</h1>
+                        <p>Los sinópticos son interfaces gráficas avanzadas y plantean retos a los comandos nativos de Maya.</p>
                     </section>
 
                     <section>
@@ -492,10 +529,8 @@ if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:
                 </section>
 
                 <section>
-                    <section>
-                        <h1>GRACIAS</h1>
-                        <p>Cesar Saez, <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
-                    </section>
+                    <h1>GRACIAS</h1>
+                    <p>Cesar Saez, <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
                 </section>
             </div>
         </div>
