@@ -1,7 +1,28 @@
 Especificaciones picker_data 
 ============================
 
-### Version 0.1:
+### Version 0.2
+
+    {
+        "filetype": "picker_data",
+        "version": 0.2,
+        "charname": "",
+        "color_table": {key: value, ...},
+        "anim_table": {key: value, ...},
+        "selectors": (
+            {"name": "",
+            "targets": (anim_table key, ...),
+            "color": color_table key,
+            "points": ((x1, y1), (x2, y2), ...)},
+            ...),
+    }
+
+Donde:
+
+* points: `list` of (x, y) coordinates
+
+
+### Version 0.1
 
     {
         "filetype": "picker_data",
