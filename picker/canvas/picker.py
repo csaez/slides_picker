@@ -1,7 +1,10 @@
+import os
 import json
+
 from maya import cmds
 from PySide import QtGui, QtCore
-from qt_utils import get_anchor
+
+from ..qt_utils import get_anchor
 
 
 class Polygon(QtGui.QGraphicsPolygonItem):
@@ -70,22 +73,15 @@ class Picker(QtGui.QGraphicsView):
         self.scene().clearSelection()
 
 
-def from_json(json_file):
-    with open(json_file) as fp:
-        data = json.load(fp)
-    return data
-
-
-def open_picker(data):
-    app = QtGui.QMainWindow(parent=get_anchor())
-    app.setWindowTitle("Character Picker")
-    p = Picker()
-    p.setScene(QtGui.QGraphicsScene())
-    p.loadData(data)
-    app.setCentralWidget(p)
-    app.show()
-
-
-d = from_json(r"W:\slides\slides_picker\code\canvas\dummy2.json")
-if d.get("filetype") == "picker_data" and d.get("version") >= 0.2:
-    open_picker(d)
+def show():
+    path = os.path.join(os.path.dirname(__file__), "dummy.json")
+    with open(path) as fp:
+        d = json.load(fp)
+    if d.get("filetype") == "picker_data" and d.get("version") >= 0.2:
+        app = QtGui.QMainWindow(parent=get_anchor())
+        app.setWindowTitle("Character Picker")
+        p = Picker()
+        p.setScene(QtGui.QGraphicsScene())
+        p.loadData(d)
+        app.setCentralWidget(p)
+        app.show()

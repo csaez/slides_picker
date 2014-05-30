@@ -1,12 +1,13 @@
+import os
 import json
 
 data = {"filetype": "picker_data", "version": 0.1,
         "charname": "mario_rig",
-        "color_table": {"darkred": (0.6, 0.06, 0.01),
-                        "yellow": (0.9, 0.7, 0.1),
-                        "pink": (0.98, 0.58, 0.43),
-                        "blue": (0.1, 0.4, 0.6),
-                        "red": (0.8, 0.15, 0.15),
+        "color_table": {"darkred": (155, 15, 5),
+                        "yellow": (230, 180, 25),
+                        "pink": (245, 148, 110),
+                        "blue": (25, 105, 155),
+                        "red": (205, 35, 35),
                         "black": (0, 0, 0)},
         "anim_table": {u'cn_base': u'mario_rig:mario_ac_cn_base',
                        u'cn_bottomhead': u'mario_rig:mario_edit_cn_bottomhead',
@@ -202,6 +203,6 @@ data = {"filetype": "picker_data", "version": 0.1,
                          u'rt_handFK', u'cn_tophead', u'cn_pelvis',
                          u'cn_lowbody_bend')})}
 
-json_file = r"W:\slides\slides_picker\code\cmds\data.json"
+json_file = os.path.join(os.path.dirname(__file__), 'mario.json')
 with open(json_file, "w") as fp:
     json.dump(data, fp, indent=2, separators=[",", ":"])

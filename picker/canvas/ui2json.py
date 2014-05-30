@@ -20,7 +20,7 @@ def main(ui_file):
             }
     json_file = ".".join(ui_file.split(".")[:-1]) + ".json"
     xml = ElementTree.parse(ui_file)
-    for btn in xml.getroot().find("widget").findall("widget"):
+    for btn in xml.getroot().find("widget").find("widget").findall("widget"):
         if not btn.attrib.get("class") or "Button" not in btn.attrib.get("class"):
             continue
 
@@ -48,7 +48,8 @@ def main(ui_file):
         data["selectors"].append(d)
 
     try:
-        with open(r"W:\slides\slides_picker\code\cmds\data.json") as fp:
+        # reusing previous data
+        with open(r"W:\slides\slides_picker\code\data\mario.json") as fp:
             d = json.load(fp)
         data["anim_table"] = d["anim_table"]
     except:
