@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'dummy.ui'
 #
-# Created: Fri May 16 15:32:04 2014
+# Created: Tue Jul 01 21:44:19 2014
 #      by: pyside-uic 0.2.14 running on PySide 1.1.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -70,7 +70,7 @@ class Ui_MainWindow(object):
 "color: rgb(220, 220, 220);")
         self.rt_footFK.setObjectName("rt_footFK")
         self.cn_upperbody = QtGui.QPushButton(self.centralwidget)
-        self.cn_upperbody.setGeometry(QtCore.QRect(150, 270, 90, 20))
+        self.cn_upperbody.setGeometry(QtCore.QRect(150, 290, 90, 20))
         self.cn_upperbody.setStyleSheet("background-color: rgb(255, 170, 127);")
         self.cn_upperbody.setObjectName("cn_upperbody")
         self.rt_toe = QtGui.QPushButton(self.centralwidget)
@@ -179,7 +179,7 @@ class Ui_MainWindow(object):
         self.rt_arm_settings.setStyleSheet("background-color: rgb(235, 48, 48);")
         self.rt_arm_settings.setObjectName("rt_arm_settings")
         self.cn_pelvis = QtGui.QPushButton(self.centralwidget)
-        self.cn_pelvis.setGeometry(QtCore.QRect(150, 290, 90, 20))
+        self.cn_pelvis.setGeometry(QtCore.QRect(150, 270, 90, 20))
         self.cn_pelvis.setStyleSheet("background-color: rgb(240, 200, 40);")
         self.cn_pelvis.setObjectName("cn_pelvis")
         self.lf_hipFK = QtGui.QPushButton(self.centralwidget)
@@ -386,7 +386,7 @@ class Ui_MainWindow(object):
 "color: rgb(220, 220, 220);")
         self.rt_ring0.setObjectName("rt_ring0")
         self.lf_elbowFK = QtGui.QPushButton(self.centralwidget)
-        self.lf_elbowFK.setGeometry(QtCore.QRect(320, 140, 40, 90))
+        self.lf_elbowFK.setGeometry(QtCore.QRect(320, 149, 40, 81))
         self.lf_elbowFK.setStyleSheet("background-color: rgb(60, 60, 135);\n"
 "color: rgb(255, 255, 255);")
         self.lf_elbowFK.setObjectName("lf_elbowFK")

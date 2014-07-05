@@ -5,7 +5,7 @@ from maya import cmds  # importamos los comandos de maya
 
 
 def picker(data, w=300, h=30):
-    w = cmds.window(title="Picker", width=w)  # nueva ventana
+    p = cmds.window(title="Picker", width=w)  # nueva ventana
     cmds.columnLayout(adjustableColumn=True)  # layout vertical
     # nombre del personaje
     cmds.text(label="char: " + data["charname"], height=h)
@@ -17,7 +17,7 @@ def picker(data, w=300, h=30):
         # creamos el boton
         cmds.button(label=btn["name"], height=h, backgroundColor=color,
                     command=lambda _, t=targets: cmds.select(t))
-    cmds.showWindow(w)  # abrimos la ventana
+    cmds.showWindow(p)  # abrimos la ventana
 
 
 def show():

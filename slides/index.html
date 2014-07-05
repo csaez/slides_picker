@@ -39,25 +39,29 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h1>Character Picker</h1>
-                    <h4>... o cómo hacer un sinóptico corporal para Autodesk Maya.</h4>
-                    <br>
-                    <p>Cesar Saez, <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
-                </section>
+                    <section>
+                        <h1>Character Picker</h1>
+                        <h4>... o cómo hacer un sinóptico corporal para Autodesk Maya.</h4>
+                        <br>
+                        <p>César Sáez - <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
+                    </section>
 
-                <section>
-                    <h2>Hoy hablaremos sobre...</h2>
-                    <ul>
-                        <li>Sinópticos</li>
-                        <li>Python</li>
-                        <li>Maya APIs (cmds, openmaya, pymel)</li>
-                        <li>Qt (PyQt, PySide)
-                            <ul>
-                                <li>Designer</li>
-                                <li>Graphics View Framework</li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <section>
+                        <h2>Hoy hablaremos sobre...</h2>
+                        <ul>
+                            <li>Sinópticos</li>
+                            <li>Python</li>
+                            <li>Maya APIs (cmds, openmaya, pymel)</li>
+                            <li>Qt (PyQt, PySide)
+                                <ul>
+                                    <li>Designer</li>
+                                    <li>Graphics View Framework</li>
+                                </ul>
+                            </li>
+                            <li>Conclusiones</li>
+                            <li>Preguntas</li>
+                        </ul>
+                    </section>
                 </section>
 
 
@@ -127,7 +131,7 @@
 
                 <section data-background="#4d7e65">
                     <section>
-                        <h2>Interfaz gráfica → Scripting</h2>
+                        <h3>Interfaz gráfica → Programación</h3>
                         <p>Maya Embedded Language (MEL) o Python?</p>
                     </section>
 
@@ -272,7 +276,7 @@ if d.get("filetype") == "picker_data" and d.get("version") &gt;= 0.1:     # vali
                 <section data-background="#395768">
                     <section>
                         <h1><a href="http://qt-project.org/">Qt</a>, code less...</h1>
-                        <p>Qt es una librería multiplataforma para desarrollar interfaces gráficas en C++, Maya utiliza internamente Qt para dibujar su GUI.</p>
+                        <p>Qt es un framework multiplataforma para desarrollar interfaces gráficas en C++, Maya utiliza internamente Qt para dibujar su GUI.</p>
                     </section>
 
                     <section>
@@ -308,7 +312,7 @@ if __name__ == "__main__" and len(sys.argv) == 2:
     convert(sys.argv[1])
                         </code></pre>
                         <br>
-                        <pre><code class="shell">"c:\Program Files\Autodesk\Maya2014\bin\mayapy.exe" pyside-uic.py dummy.ui</code></pre>
+                        <pre><code class="shell">mayapy pyside-uic.py dummy.ui</code></pre>
                         <p style="text-align: right">
                             <small><a href="http://download.autodesk.com/global/docs/maya2014/en_us/files/GUID-FAD0F6CC-15D0-4489-9372-028146B70F49.htm">*Documentación</a></small>
                         </p>
@@ -333,15 +337,15 @@ def get_anchor():
                     <section>
                         <h1>1 + 2 ↴</h1>
                         <pre><code class="python">
-from PySide.QtGui import QDialog                            # dialogo genérico Qt
-from dummy import Ui_Dialog                                 # ui convertido
+from PySide.QtGui import QMainWindow                        # ventana genérica Qt
+from dummy import Ui_MainWindow                             # ui convertido
 from qt_utils import get_anchor                             # maya mainwindow
 
 
-class Picker(QDialog):                                      # extendemos clase QDialog
+class Picker(QMainWindow):                                  # extendemos clase QMainWindow
     def __init__(parent):
         super(Picker, self).__init__(parent)
-        self.ui = Ui_Dialog()
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)                               # transferimos botones
 
 picker = Picker(parent=get_anchor())                        # creamos dialogo
@@ -364,14 +368,14 @@ picker.show()                                               # abrimos dialogo
                     <section>
                         <h2>designer/picker.py</h2>
                         <pre><code>from PySide.QtGui import QDialog
-from dummy import Ui_Dialog
-from qt_utils import get_anchor
 from maya import cmds
+from qt_utils import get_anchor
+from dummy import Ui_MainWindow
 
-class Picker(QDialog):
+class Picker(QMainWindow):
     def __init__(self, parent, data):
         super(Picker, self).__init__(parent)
-        self.ui = Ui_Dialog()
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         # señales
         for k, v in data["anim_table"].iteritems():
@@ -501,7 +505,7 @@ class Picker(QtGui.QGraphicsView):
                 </section>
 
 
-                <section>
+                <section data-background="#007777">
                     <section>
                         <h1>Conclusiones</h1>
                     </section>
@@ -512,8 +516,8 @@ class Picker(QtGui.QGraphicsView):
                     </section>
 
                     <section>
-                        <h1>Scripting</h1>
-                        <p>Maya no cuenta con una herramienta nativa para realizar sinópticos, pero podemos realizar la nuestra.</p>
+                        <h1>Sinópticos</h1>
+                        <p>Maya no cuenta con una herramienta nativa para realizar sinópticos, pero podemos programar la nuestra.</p>
                     </section>
 
                     <section>
@@ -531,11 +535,15 @@ class Picker(QtGui.QGraphicsView):
                         <br><br>
                         <p>Nada es gratis, +flexibilidad → +trabajo.</li>
                     </section>
+
+                    <section>
+                        <h1>Preguntas?</h1>
+                    </section>
                 </section>
 
                 <section>
                     <h1>GRACIAS</h1>
-                    <p>Cesar Saez, <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
+                    <p>César Sáez - <a href="http://cesarsaez.me">http://cesarsaez.me</a></p>
                 </section>
             </div>
         </div>
